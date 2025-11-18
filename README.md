@@ -105,7 +105,20 @@ secrets/
 
 #### 환경 변수 사용 방법
 
-**Spring Boot (Backend)**
+**Spring Boot (Backend) - 자동 로드**
+
+프로젝트는 `spring-dotenv` 라이브러리를 사용하여 `.env` 파일을 자동으로 로드합니다.
+
+```bash
+# 1. secrets 서브모듈에서 환경 변수 파일 복사
+cp secrets/.env.development backend/.env
+
+# 2. 백엔드 실행 (환경 변수 자동 로드)
+cd backend
+./gradlew bootRun
+```
+
+**대안: 수동 설정 (선택사항)**
 - IntelliJ IDEA: Run Configuration → Environment Variables 설정
 - VS Code: launch.json에 env 설정 추가
 - 명령줄:
